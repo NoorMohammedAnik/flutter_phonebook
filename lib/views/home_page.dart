@@ -1,10 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_phonebook/views/authentication/user_login.dart';
 import 'package:flutter_phonebook/views/contacts/add_contact.dart';
 import 'package:flutter_phonebook/views/contacts/update_contact.dart';
-import 'package:flutter_phonebook/views/authentication/user_login.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
@@ -39,7 +38,7 @@ class _HomePageState extends State<HomePage> {
       if (response.statusCode == 200) {
         var responseData = jsonDecode(response.body);
 
-        for (var eachRecord in (responseData["userData"] as List)) {
+        for (var eachRecord in (responseData["contactData"] as List)) {
           contactList.add(Contact.fromJson(eachRecord));
         }
       }

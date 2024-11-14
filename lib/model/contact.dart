@@ -6,11 +6,13 @@ class Contact {
   String? userId;
 
   Contact(
-      {this.contactId,
+      {
+        this.contactId,
         this.contactName,
         this.contactPhone,
         this.contactEmail,
-        this.userId});
+        this.userId
+      });
 
   Contact.fromJson(Map<String, dynamic> json) {
     contactId = json['contact_id'];
@@ -21,7 +23,7 @@ class Contact {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['contact_id'] = contactId;
     data['contact_name'] = contactName;
     data['contact_phone'] = contactPhone;
