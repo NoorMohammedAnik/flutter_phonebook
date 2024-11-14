@@ -2,6 +2,9 @@
 class API {
 
 
+  //for local testing using xampp
+  //static const mainUrl = "http://10.0.2.2/phonebook";
+
   //main api url
   static const mainUrl = "https://demo.onlinesoftsell.com/phonebook";
 
