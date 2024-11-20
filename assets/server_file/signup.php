@@ -1,19 +1,19 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     //added db connection
-    include 'db_connect.php';
+    include "db_connect.php";
 
-    //recevied data from app
-    $user_name = $_POST['user_name'];
-    $user_email = $_POST['user_email'];
-    $user_password = md5($_POST['user_password']);
+    //received data from app
+    $user_name = $_POST["user_name"];
+    $user_email = $_POST["user_email"];
+    $user_password = md5($_POST["user_password"]);
 
 
     //checking if user email already exists in db
-    $sqlQuery = "SELECT * FROM users WHERE user_email='$userEmail'";
+    $sqlQuery = "SELECT * FROM users WHERE user_email='$user_email'";
 
     //query execution and checking if user email already exists in db
     $resultOfQuery = $con->query($sqlQuery);
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //if user email already exists in db, send response as 'exists' else insert user data into db and send response as'success'
     if ($resultOfQuery->num_rows > 0) {
 
-        echo json_encode(array("success" => "exists"));
+         echo json_encode(["success" => "exists"]);
     } else {
 
 
@@ -32,9 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $resultOfQuery = $con->query($sqlQuery);
 
         if ($resultOfQuery) {
-            echo json_encode(array("success" => true));
+             echo json_encode(["success" => true]);
         } else {
-            echo json_encode(array("success" => false));
+             echo json_encode(["success" => false]);
         }
     }
 }

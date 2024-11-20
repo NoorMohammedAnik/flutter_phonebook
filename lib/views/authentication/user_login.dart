@@ -50,6 +50,7 @@ class _UserLoginState extends State<UserLogin> {
         //calling the API to authenticate user
         var request = await http.post(
           Uri.parse(API.userLogin),
+
           body: {
             "user_email": emailController.text.trim(),
             "user_password": passwordController.text.trim(),
@@ -189,7 +190,7 @@ class _UserLoginState extends State<UserLogin> {
                           loginFormKey.currentState!.save();
 
                           //Check internet connection
-                          bool isConnected = await InternetConnectionChecker().hasConnection;
+                         bool isConnected = await InternetConnectionChecker().hasConnection;
 
                           if (!isConnected) {
                             Fluttertoast.showToast(msg: "No internet connection");

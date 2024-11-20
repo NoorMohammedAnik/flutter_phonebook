@@ -3,10 +3,11 @@ class API {
 
 
   //for local testing using xampp
-  //static const mainUrl = "http://10.0.2.2/phonebook";
+  static const mainUrl = "http://192.168.26.120/phonebook";
+  //To get ip address go to cmd and run ipconfig command and copy ipv4 address
 
-  //main api url
-  static const mainUrl = "https://demo.onlinesoftsell.com/phonebook";
+  //main api url for live server
+  //static const mainUrl = "https://demo.onlinesoftsell.com/phonebook";
 
   //user signup api url
   static const userSignup="$mainUrl/signup.php";

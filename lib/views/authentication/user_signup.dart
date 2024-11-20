@@ -206,7 +206,7 @@ class _UserSignupState extends State<UserSignup> {
                           registrationFormKey.currentState!.save();
 
                           //check internet connection
-                          bool isConnected = await InternetConnectionChecker().hasConnection;
+                         bool isConnected = await InternetConnectionChecker().hasConnection;
 
                           if (!isConnected) {
                             Fluttertoast.showToast(
